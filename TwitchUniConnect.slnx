@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/ApplicationLayer/" />
+  <Folder Name="/Frontends/" />
+  <Folder Name="/Frontends/Mobile/" />
+  <Folder Name="/Frontends/Web/" />
+  <Folder Name="/Gradebook/" />
+  <Folder Name="/Schedule/" />
+  <Folder Name="/SharedKernel/">
+    <Project Path="TwitchUniConnect.SharedKernel.UnitTests/TwitchUniConnect.SharedKernel.UnitTests.csproj" Id="e078dc0f-9e81-45e9-bdb0-e00277479521" />
+    <Project Path="TwitchUniConnect.SharedKernel/TwitchUniConnect.SharedKernel.csproj" Id="3bc9708a-9f7c-47b1-9b32-90d409f9768c" />
+  </Folder>
+  <Folder Name="/Social/">
+    <Project Path="TwitchUniConnect.Social.DAL/TwitchUniConnect.Social.DAL.csproj" Id="a2abd316-3dae-45c6-ba17-cea1e8d85423" />
+    <Project Path="TwitchUniConnect.Social.Domain/TwitchUniConnect.Social.Domain.csproj" Id="f7f04f25-69a7-4d66-9005-de26c8b9872f" />
+    <Project Path="TwitchUniConnect.Social.UnitTests/TwitchUniConnect.Social.UnitTests.csproj" Id="9c419358-d6d4-4dfc-aef4-8ddbfd794e4d" />
+  </Folder>
+</Solution>
