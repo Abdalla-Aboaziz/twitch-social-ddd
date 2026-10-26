@@ -1,6 +1,6 @@
 ﻿using TwitchUniConnect.SharedKernel.Types;
 
-namespace TwitchUniConnect.Social.Domain.Aggregates.UserAggreagate;
+namespace TwitchUniConnect.Social.Domain.Aggregates.UserAggregate;
 
 public class Name : ValueObject
 {
@@ -47,11 +47,11 @@ public class Name : ValueObject
 
     public Name ChangeFirstName(string newFirstName)
     {
-        return new Name(newFirstName, LastName);
+        return Create(newFirstName, LastName);
     }
     public Name ChangeLastName(string newLastName)
     {
-        return new Name(FirstName, newLastName);
+        return Create(FirstName, newLastName);
     }
 
 

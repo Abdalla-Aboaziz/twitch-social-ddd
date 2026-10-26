@@ -1,6 +1,6 @@
 ﻿using TwitchUniConnect.SharedKernel.Types;
 
-namespace TwitchUniConnect.Social.Domain.Aggregates.UserAggreagate;
+namespace TwitchUniConnect.Social.Domain.Aggregates.UserAggregate;
 
 /// <summary>
 /// instead of using Enum 
