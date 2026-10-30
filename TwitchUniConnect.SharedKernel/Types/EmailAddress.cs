@@ -7,7 +7,11 @@ public class EmailAddress : ValueObject
 
     public static EmailAddress Create(string emailName, string domain)
     {
+        if (string.IsNullOrEmpty(emailName))
+            throw new ArgumentException("Email name cannot be null or empty", nameof(emailName));
 
+        if (string.IsNullOrEmpty(domain))
+            throw new ArgumentException("Domain cannot be null or empty", nameof(domain));
 
         return new EmailAddress
         {
