@@ -1,10 +1,17 @@
 <Solution>
-  <Folder Name="/ApplicationLayer/" />
-  <Folder Name="/Frontends/" />
-  <Folder Name="/Frontends/Mobile/" />
-  <Folder Name="/Frontends/Web/" />
-  <Folder Name="/Gradebook/" />
-  <Folder Name="/Schedule/" />
+  <Folder Name="/ApplicationLayer/">
+    <Project Path="ApplicationLayer/TwitchUniConnect.Social.Application/TwitchUniConnect.Social.Application.csproj" Id="b52f781c-3fca-4fd0-b38b-02c392923c53" />
+  </Folder>
+  <Folder Name="/Frontends/">
+  </Folder>
+  <Folder Name="/Frontends/Web/">
+    <Project Path="Frontends/Web/TwitchUniConnect.Social.Api/TwitchUniConnect.Social.Api.csproj" Id="e780e64e-09c6-40da-a177-5273d6c60354" />
+  </Folder>
+  <Folder Name="/IdentityAndAccessManagment/">
+    <Project Path="TwitchUniConnect.Social.IdentityAndAccessManagment.DAL/TwitchUniConnect.Social.IdentityAndAccessManagment.DAL.csproj" Id="247b14da-d91d-48f1-b0a5-402d9a2b1ee6" />
+    <Project Path="TwitchUniConnect.Social.IdentityAndAccessManagment.Domain/TwitchUniConnect.Social.IdentityAndAccessManagment.Domain.csproj" Id="9fd0e21d-c692-4132-b14e-2f97a93cd6aa" />
+    <Project Path="TwitchUniConnect.Social.IdentityAndAccessManagment.UnitTest/TwitchUniConnect.Social.IdentityAndAccessManagment.UnitTest.csproj" Id="14b7ee96-cae3-466f-86bb-1195c7100f9a" />
+  </Folder>
   <Folder Name="/SharedKernel/">
     <Project Path="TwitchUniConnect.SharedKernel.UnitTests/TwitchUniConnect.SharedKernel.UnitTests.csproj" Id="e078dc0f-9e81-45e9-bdb0-e00277479521" />
     <Project Path="TwitchUniConnect.SharedKernel/TwitchUniConnect.SharedKernel.csproj" Id="3bc9708a-9f7c-47b1-9b32-90d409f9768c" />

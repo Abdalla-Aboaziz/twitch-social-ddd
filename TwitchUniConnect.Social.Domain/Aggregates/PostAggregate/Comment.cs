@@ -6,7 +6,7 @@ namespace TwitchUniConnect.Social.Domain.Aggregates.PostAggregate;
 public class Comment : Entity<Guid>
 {
     private const int MaxMessageLength = 2000;
-    private List<Guid> _replies;
+    private readonly List<Guid> _replies = [];
 
     #region Constructors and Properties
 
@@ -14,7 +14,7 @@ public class Comment : Entity<Guid>
     {
     }
 
-    public Guid AuthorId { get; private set; }
+    public Guid AuthorProfileId { get; private set; }
 
     public string Message { get; private set; } = default!;
 
@@ -37,7 +37,7 @@ public class Comment : Entity<Guid>
         Guid id,
         Guid authorId,
         string message,
-        IEnumerable<Guid> replies = null
+        IEnumerable<Guid>? replies = null
         )
     {
         if (id == Guid.Empty)
@@ -52,14 +52,18 @@ public class Comment : Entity<Guid>
 
         var now = DateTime.UtcNow;
 
-        return new Comment(id)
+        var comment = new Comment(id)
         {
-            AuthorId = authorId,
+            AuthorProfileId = authorId,
             Message = message,
             DateCreated = now,
-            LastModified = now,
-            _replies = replies != null ? replies.ToList() : new List<Guid>()
+            LastModified = now
         };
+
+        if (replies is not null)
+            comment._replies.AddRange(replies.Distinct());
+
+        return comment;
     }
 
     #endregion
@@ -79,6 +83,10 @@ public class Comment : Entity<Guid>
         if (commentId == Guid.Empty)
             throw new ArgumentException(
                 "Comment ID cannot be empty.", nameof(commentId));
+        if (commentId == Id)
+            throw new InvalidOperationException("A comment cannot reply to itself.");
+        if (_replies.Contains(commentId))
+            throw new InvalidOperationException("This reply has already been added.");
         _replies.Add(commentId);
         LastModified = DateTime.UtcNow;
     }

@@ -1,6 +1,6 @@
 ﻿using TwitchUniConnect.SharedKernel.Types;
 
-namespace TwitchUniConnect.Social.Domain.Aggregates.UserAggregate;
+namespace TwitchUniConnect.Social.Domain.Aggregates.ProfileAggregate;
 
 public class Name : ValueObject
 {

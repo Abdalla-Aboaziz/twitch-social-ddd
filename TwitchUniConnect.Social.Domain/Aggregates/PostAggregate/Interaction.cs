@@ -4,7 +4,7 @@ namespace TwitchUniConnect.Social.Domain.Aggregates.PostAggregate;
 
 public class Interaction : ValueObject
 {
-    public Interaction()
+    private Interaction()
     {
 
     }
@@ -13,6 +13,7 @@ public class Interaction : ValueObject
 
     public static Interaction Create(InteractionType type, Guid authorId)
     {
+        ArgumentNullException.ThrowIfNull(type);
         if (authorId == Guid.Empty)
         {
             throw new ArgumentException("Author ID cannot be empty.", nameof(authorId));
